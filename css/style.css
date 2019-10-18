@@ -60,6 +60,16 @@ h1,h2,h3,h4,h5,h6{
   display: block;
   text-align: center;
 }
+.text-center{
+  text-align: center;
+}
+.mt-2em{
+  margin-top: 2em;
+}
+.mg-2em{
+  padding-right: 2em;
+}
+
 
 
 /* ★★★모바일 스타일★★★ */
@@ -851,20 +861,56 @@ text-decoration:none;
   margin-top: 1em;
   position: relative;
 }
-.content-box span img, .content-box div img{
+.company-content-img1, .company-content-img2{
   right: 30px;
   top: -70px;
   position: absolute;
 }
-.content-box div img{
+.company-content-img2{
   top: 50px;
 }
-.content-box2{
-  
 
-}
 .content-box2-text{
   position: absolute;
-  top: 5.5em;
+  top: 5em;
   right: 5em;
 }
+.content-box2-text2{
+  position: absolute;
+  top: 4em;
+  /* right: 5em; */
+}
+
+/* ★★★데스크탑 게시판★★★ */
+.table{
+         margin:2em auto 0px auto;
+         width: 90%;
+}
+.table, .table th , .table td{
+         border:1px solid gray;
+         border-width: 1px 0;
+         border-collapse: collapse;
+         text-align: center;
+         padding:10px;
+}
+.table th{
+         background-color: #999;
+         font-size: 1.1em;
+         color: #fff;
+         border-width:2px 0;
+}
+.table-heading{
+  padding-right: 50px;
+}
+.table td{
+         border-style:dotted;
+}
+
+.table tr:hover td{
+         background-color: #eee;
+         cursor : pointer;
+}
+.even{
+         background-color: #fff;
+}
+
