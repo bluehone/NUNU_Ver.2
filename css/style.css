@@ -1,0 +1,820 @@
+@charset "utf-8";
+@import url('https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css');
+/* @import url('./fonts.css'); */
+@import url('./normalize.css');
+@import url('./reset.css');
+/* 숨김 콘텐츠 */
+legend, .a11y-hidden{
+  background: pink;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+}
+
+/* 링크 스타일 */
+a{
+  color: inherit;
+  text-decoration: none;
+}
+/* 기본 스타일 */
+html{
+  font-size: 10px;
+}
+body{
+  font-family: 'Spoqa Han Sans', sans-serif;
+  font-weight: 400;
+  font-size: 1.4rem;
+  background: #fff;
+  color: #181818;
+}
+h1,h2,h3,h4,h5,h6{
+  font-weight: bold;
+}
+
+/* 공통 스타일 */
+*, *::before, *::after{
+  box-sizing: border-box;
+}
+
+/* 공통 푸터 */
+.footer {
+  background-color: #888;
+  color: #fff;
+  text-align: center;
+  font-size: 1.8rem;
+  padding: 1.5em 0;
+  margin-top: 2em;
+}
+/* 주소 및 저작권 공통 */
+.address {
+  font-style: normal;
+  margin-bottom: 0.5em;
+}
+.copyright {
+  font-size: 1em;
+}
+
+/* ★★★모바일 스타일★★★ */
+@media screen and (min-width: 320px) and (max-width: 1199px){
+  .header{
+    /* background: #38302e; */
+    color: #fff;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    margin-top: 1.2em;
+  }
+  .logo, .member, .search-form{
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+  /* 모바일 로고 */
+  .logo{
+    padding-top: 1.5em;
+    /* padding-bottom: 1.5em; */
+  }
+  .logo img{
+    max-width: 10rem;
+  }
+  /* 모바일 멤버링크 */
+  .member{
+    background: #1061cc;
+    order: -1;
+    display: flex;
+    justify-content: flex-end;
+    position: absolute;
+    top: 0;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    
+  }
+  .member a{
+    color: #fff;
+    display: block;
+    padding: 0.5em 0 0.5em 1em;
+    /* margin-left: 1em; */
+  }
+  /* 모바일 검색 폼 */
+  input[type="search"]{
+    width: calc(100% - 35px);
+  }
+  .btn-search{
+    position: relative;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding: 0;
+  }
+  .btn-search::after{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: transparent url('./images/btn_search.png') no-repeat;
+    background-size: 100%;
+  }
+  /* 모바일 메인메뉴 */
+  .btn-menubar{
+    position: absolute;
+    top: 62px;
+    right: 20px;
+    background: transparent;
+    width: 30px;
+    height: 30px;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+  }
+  .menubar{
+    background: #000;
+    width: 100%;
+    height: 25%;
+    position: absolute;
+    left: 0;
+    border-radius: 2px;
+    transition: all 0.2s;
+  }
+  .menubar-top{
+    top: 0;
+  }
+  .menubar-middle{
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .menubar-bottom{
+    top: 100%;
+    transform: translateY(-100%);
+  }
+  .is-act .menubar-top{
+    top: 50%;
+    transform: translateY(-50%) rotate(45deg);
+  }
+  .is-act .menubar-middle{
+    transform: translate(-100%, -50%);
+  }
+  .is-act .menubar-bottom{
+    top: 50%;
+    transform: translateY(-50%) rotate(-45deg);
+  }
+  .menu{
+    width: 70%;
+    height: 100vh;
+    padding: 3em;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,0.85);
+    color: #fff;
+    transform: translateX(-100%);
+    transition: all 0.2s;
+  }
+  .is-act .menu{
+    transform: translateX(0);
+  }
+  .menu-list{
+    margin-bottom: 1em;
+  }
+  .menu-item{
+    cursor: pointer;
+  }
+  .sub-menu{
+    display: none;
+    list-style: disc;
+    padding-left: 40px;
+  }
+  .menu-act .sub-menu{
+    display: block;
+  }
+  .sub-menu li{
+    margin: 0.5em 0;
+  }
+  /* 모바일 메인 콘텐츠 레이아웃 */
+  .slide_1, .slide_2, .inquiry, .map{
+    padding: 0 20px;
+  }
+
+  /* 모바일 비주얼 */
+  .visual{
+    background-color: #0b540b;
+    width: 100%;
+  }
+  .visual > img{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 0 1em;
+    max-width: 100%;
+  }
+  
+  .visual_2{
+    /* margin: 0; */
+    /* margin-top: 2em; */
+    /* height: 30em; */
+    /* text-align: center; */
+    
+    /* background-color: transparent; */
+  }
+  .visual_2_text{
+    margin: 2em auto;
+    font-size: 1.2em;
+    background-color: rgba(0, 0, 0,0.75);
+    width: 13em;
+    height: 4em;
+    padding: 0.5em 0;
+    text-align: center;
+    float: center;
+    vertical-align: middle;
+    /* display: inline-block; */
+  }
+  .visual_2_text > a{
+    color: #fff;
+    text-shadow: 2px 0px 1px #000;
+  }
+  .visual_2{
+    background-image: url('../images/visual_2.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* width: 100%; */
+    /* max-width: 100%; */
+    /* min-height: 100%; */
+    background-position: center;
+    opacity: 0.8;
+    
+    /* position: absolute; */
+  }
+  /* .visual_2::before{
+    content: "";
+  } */
+
+    /* 모바일 슬라이드  */
+  .slide{
+    width: 100%;
+  }
+   .slide > a > img{
+    display: flex;
+    justify-content: center;
+    margin: 1.5em auto;
+    max-width: 100%;
+  }
+  
+  /* 모바일 문의하기 */
+  .inquiry{
+    background-image: url('../images/inquiry.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 0;
+  }
+  .inquiry-box{    
+    background-color: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .inquiry-heading{
+    color: #fff;
+    font-size: 1.2em;
+    margin: 0.5em 0;
+    position: absolute;
+
+  }
+  .inquiry-user-name label, .inquiry-phone-number label, .inquiry-email label, .inquiry-content label{
+  position: absolute;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  margin: -1px; 
+  }
+  .inquiry-user-name input, .inquiry-phone-number input, .inquiry-email input, .inquiry-content textarea{
+  width: 18em;
+  margin-top: 0.7em;
+  padding: 0.5em;
+  box-shadow: 1px 1px 1px;
+}
+
+.inquiry-user-name input{
+  margin-top: 3em;
+}
+
+.inquiry-content textarea{
+  height: 10em;
+}
+
+.inquiry-form fieldset{
+  border: 0;
+}
+
+.btn-inquiry{
+  width: 125px;
+  height: 40px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  background-color:#fdd93d;
+  color:#3a1c1c;
+  font-weight: 600;
+}
+.agree, .inquiry-button{
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+}
+.btn-agree{
+  width: 1.5em;
+  height: 1.5em;
+}
+.inquiry-agree-text{
+  color: #fff;
+}
+
+.btn-inquiry:hover {
+    background-color: #ecc516;
+}
+
+/* 모바일 고객센터 */
+.customer{
+  /* width: 15em; */
+  /* position: absolute; */
+  /* top: 2300px;   */
+  /* right: 150px; */
+  color: #fff;
+  background-color: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 0.5em 0 1em 0;
+  /* padding: 1em 0.5em; */
+}
+
+.customer-heading{
+  font-size: 1.2em;
+}
+.tel, .fax, .contact-time, .holiday-guide, .kakao-talk{
+  margin: 0.5em 0;
+  font-size: 1em;
+}
+
+/* 모바일 오시는 길 */
+.map-text{
+  font-size: 1.2em;
+  text-align: center;
+  margin: 1em 0;
+}
+
+/* 모바일 푸터 */
+.footer{
+  text-align: left;
+  padding: 1em;
+}
+.address span{
+  display: inline-block;
+}
+}
+
+/* ★★★데스크탑 스타일★★★ */
+@media screen and (min-width: 1200px){
+  
+  /* 데스크탑 레이아웃 */
+  .logo_menu, .slogan{
+    width: 1200px;
+    margin: 0 auto;
+  }
+  .slide_1, .slide_2, .inquiry, .map{
+    width: 1200px;
+    margin: 0 auto;
+  }
+
+  .logo_menu{
+    display: flex;
+    height: 5vh;
+  }
+  /* 데스크탑 헤더 */
+  .header {
+    /* position: relative; */
+    padding-bottom: 1em;
+    width: 15%;
+    margin: 0;
+    
+  }
+  /* 데스크탑 로고 */
+  .logo{
+    /* position: absolute; */
+    top: 50%;
+    left: 15px;
+    /* margin-top: -29px; */
+  }
+  .logo img{
+    vertical-align: top;
+  }
+  /* 데스크탑 멤버링크 */
+  .member{
+    /* background-color: pink; */
+    text-align: center;
+    margin: 10px 0;
+    padding: 5px 0;
+    /* right: 0; */
+  }
+    .member_1{
+    color: #fff;
+    width: 80px;
+    background-color: #1061cc;
+    border-radius: 5px 0 0 5px;
+    border-left: 1px solid #3e3e3e;
+    border-top: 1px solid #3e3e3e;
+    border-bottom: 1px solid #3e3e3e;
+  }
+  .member_2{
+    width: 80px;    
+    border-radius: 0 5px 5px 0;
+    border-right: 1px solid #3e3e3e;
+    border-top: 1px solid #3e3e3e;
+    border-bottom: 1px solid #3e3e3e;
+  }
+  .member_1:hover, .member_2:hover{
+    font-weight: bold;
+    
+  }
+
+  .member li, .member a{
+    display: inline-block;
+  }
+  .member li{
+    font-size: 1.4rem;
+  }
+  /* .member li:nth-child(n+2)::before{
+    content: '|';
+   } */
+  .member a{
+    padding: 0.5em 1em;
+  }
+
+  /* 데스크탑 검색 폼 */
+  .search-form{
+    text-align: right;
+  }
+  input[type="search"]{
+    width: 400px;
+  }
+  .btn-search{
+    padding: 5px 10px;
+    border: 1px solid #666;
+    background: #988574;
+    border-radius: 5px;
+    color: #fff;
+    height: 30px;
+  }
+  /* .btn-search::before{
+    content: '검색';
+  } */
+  /* 데스크탑 메인메뉴 */
+  .btn-menubar{
+    display: none;
+  }
+  
+  /* .navigation{
+    width: 75%;
+  }
+  .navigation li ul{
+    display: none;
+    width: 0;
+  }
+  .navigation li:hover ul{
+    display: block;
+  }
+  .navigation li a:hover, .navigation ul li:hover a{
+    color:#fec64d;
+    text-decoration:none;
+  }
+  
+
+
+  .menu{
+    display: flex;
+    justify-content: flex-end;
+  }
+  .menu::after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+  .menu li{
+    margin: 1em 4em 1em 4em;
+  }
+  .menu-list{
+  }
+  .menu-list:first-child{
+  } */
+    .menu-list:last-child{
+    /* margin-right: 0; */
+  }
+
+
+  .menu-item{
+    /* font-size: 1.6rem;
+    font-weight: 700; */
+  }
+
+
+/* 복붙 */
+.menu{
+  display: flex;
+  justify-content: flex-end;
+}
+
+.navigation{
+border:none;
+border:0px;
+margin:0px;
+padding:0px;
+font-size:1.5rem;
+font-weight:bold;
+width: 70%;
+}
+
+.navigation ul{
+/* background: rgb(109,109,109); */
+height:50px;
+list-style:none;
+margin:0;
+padding:0;
+}
+
+.navigation li{
+float:left;
+padding:0 4em;
+/* margin: 0 4em; */
+}
+
+.navigation li a{
+/* background: rgb(109,109,109); */
+/* color:#777; */
+display:block;
+font-weight:bold;
+/* line-height:50px; */
+padding:1.5em 0;
+/* padding:0px 3em; */
+text-align:center;
+text-decoration:none;
+}
+
+.navigation li a:hover, .navigation ul li:hover a{
+/* background: #fec64d; */
+/* color:#fec64d; */
+text-decoration:none;
+}
+
+.navigation ul li:hover a{
+  color: #fec64d;
+}
+
+.navigation li ul{
+background: rgba(0,0,0,0.4);
+display:none; /* 평상시에는 드랍메뉴가 안보이게 하기 */
+height:auto;
+padding:0px;
+margin:0px;
+border:0px;
+position:absolute;
+/* width:200px; */
+z-index:200;
+top:4em;
+/*left:0;*/
+list-style: none;
+}
+
+.navigation li:hover ul{
+display:block; /* 마우스 커서 올리면 드랍메뉴 보이게 하기 */
+}
+
+.navigation li li {
+background: rgba(0,0,0,0.4);
+color: #fff;
+display:block;
+float:none;
+margin:0;
+padding:0;
+width:120px;
+}
+
+.navigation li:hover li a{
+background:none;
+}
+
+.navigation li ul a{
+display:block;
+height:30px;
+font-size:1.2rem;
+font-style:normal;
+margin:0px;
+padding:0 1em;
+text-align:left;
+}
+
+.navigation li ul a:hover, .navigation li ul li:hover a{
+/* background: rgb(71,71,71); */
+border:0px;
+color:#fec64d;
+text-decoration:none;
+}
+
+/* .menu-list:last-child{
+    padding-right: 0;
+} */
+
+/* 복붙 */
+
+
+
+  /* 데스크탑 메인 콘텐츠 레이아웃 */
+  .main{
+    display: flex;
+    flex-flow: column wrap;
+  }
+
+  .main > *{
+    margin-top: 2em;
+  }
+
+  /* 데스크탑 비주얼 */
+  .visual{
+    background-color: #0b540b;
+    width: 100%;
+  }
+  .visual > img{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+  .visual_1{
+    margin: 0;
+  }
+  .visual_2{
+    margin: 0;
+    margin-top: 2em;
+    height: 42em;
+    text-align: center;
+    position: relative;
+    background-color: transparent;
+    box-shadow: 1px 0 5px #555;
+  }
+  .visual_2_text{
+    margin: 5em;
+    font-size: 3em;
+    background-color: rgba(0, 0, 0,0.5);
+    width: 20em;
+    height: 4em;
+    padding: 0.5em 0;
+    text-align: center;
+    display: inline-block;
+  }
+  .visual_2_text > a{
+    color: #fff;
+    text-shadow: 2px 0px 1px #000;
+  }
+  .visual_2::before{
+    content: "";
+    background: url('../images/visual_2.jpg') no-repeat;
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-attachment: fixed;
+    /* background-size: contain; */
+    background-size: cover;
+    opacity: 0.7;
+    z-index: -1;
+  }
+
+  /* 데스크탑 슬라이드  */
+  .slide{
+    width: 1200px;
+    height: auto;
+  }
+  .slide > img{
+    display: flex;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 100%;
+  }
+
+  /* 데스크탑 문의하기 */
+  .inquiry{
+    background-image: url('../images/inquiry.jpg');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    position: relative;
+  }
+  .inquiry-box{    
+    background-color: rgba(0,0,0,0.5);
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  .inquiry-heading{
+    color: #fff;
+    font-size: 1.8em;
+    /* padding: 20px 0 15px 0; */
+    margin: 10px auto;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    
+
+  }
+  .inquiry-user-name label, .inquiry-phone-number label, .inquiry-email label, .inquiry-content label{
+  position: absolute;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  margin: -1px; 
+  }
+  .inquiry-user-name input, .inquiry-phone-number input, .inquiry-email input, .inquiry-content textarea{
+  width: 400px;
+  height: 35px;
+  margin-top: 12px;
+  padding: 10px;
+  box-shadow: 1px 1px 1px;
+}
+
+.inquiry-user-name input{
+  margin-top: 60px;
+}
+
+.inquiry-content textarea{
+  height: 120px;
+}
+
+.inquiry-form fieldset{
+  border: 0;
+}
+
+.btn-inquiry{
+  width: 125px;
+  height: 40px;
+  border-radius: 40px;
+  cursor: pointer;
+  font-size: 1.6rem;
+  background-color:#fdd93d;
+  color:#3a1c1c;
+  font-weight: 600;
+}
+.agree, .inquiry-button{
+  display: flex;
+  justify-content: center;
+  margin: 1em 0;
+}
+.btn-agree{
+  width: 1.5em;
+  height: 1.5em;
+}
+.inquiry-agree-text{
+  color: #fff;
+}
+
+.btn-inquiry:hover {
+    background-color: #ecc516;
+}
+
+/* 데스크탑 고객센터 */
+.customer{
+  width: 17em;
+  height: 261px;
+  position: absolute;
+  top: 60px;
+  right: 6em;
+  color: #fff;
+  background-color: rgba(0,0,0,0.7);
+  text-align: center;
+  padding: 1.2em 0.5em 1em 0.5em;
+  border: 1px solid rgba(255,255,255,0.7);
+}
+.customer-heading{
+  font-size: 1.6em;
+}
+.tel, .fax, .contact-time, .holiday-guide, .kakao-talk{
+  margin: 0.5em 0;
+  font-size: 1.3em;
+}
+
+/* 데스크탑 오시는 길 */
+.map-text{
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 1em;
+}
+
+/* ★★★모바일 컨텐츠★★★ */
+
+/* ★★★데스크탑 컨텐츠★★★ */
+.contents{
+  width: 1200px;
+  margin: 0 auto;
+  text-align: center;  
+}
