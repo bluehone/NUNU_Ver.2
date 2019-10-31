@@ -191,7 +191,8 @@ h1,h2,h3,h4,h5,h6{
     background: rgba(0,0,0,0.85);
     color: #fff;
     transform: translateX(-100%);
-    transition: all 0.2s; 
+    transition: all 0.2s;
+    z-index: 1;
   }
   .is-act .menu{
     transform: translateX(0);
