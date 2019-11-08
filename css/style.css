@@ -936,6 +936,8 @@ text-decoration:none;
   position: relative;
 }
 .company-content-img1, .company-content-img2{
+  width: auto;
+  height: auto;
   right: 30px;
   top: -70px;
   position: absolute;
